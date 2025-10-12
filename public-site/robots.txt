@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /sms-terms.html
-Allow: /sms-opt-in.html
 Disallow: /
