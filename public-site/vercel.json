@@ -6,11 +6,5 @@
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
       ]
     }
-  ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/sms-terms.html", "dest": "/sms-terms.html" },
-    { "src": "/sms-opt-in.html", "dest": "/sms-opt-in.html" },
-    { "src": "/.*", "status": 404 }
   ]
 }
