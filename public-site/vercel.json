@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/sms-terms.html", "dest": "/sms-terms.html" },
+    { "src": "/sms-opt-in.html", "dest": "/sms-opt-in.html" },
+    { "src": "/.*", "status": 404 }
+  ]
+}

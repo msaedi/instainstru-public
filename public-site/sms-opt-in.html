@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Example SMS Opt-In — InstaInstru</title>
+<style>
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:700px;margin:0 auto;padding:24px;line-height:1.6}
+ label{display:block;margin:8px 0 4px}
+ input[type="tel"]{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px}
+ button{margin-top:12px;padding:10px 16px;border:0;border-radius:8px;background:#0b5fff;color:#fff;cursor:pointer}
+ .muted{color:#6b7280;font-size:14px}
+</style>
+</head><body>
+<h1>Example SMS Opt-In</h1>
+<p>This demo shows how InstaInstru collects consent to send SMS messages.</p>
+<form>
+  <label for="phone">Mobile number</label>
+  <input id="phone" type="tel" placeholder="+1 646 555 1234" required>
+  <label>
+    <input id="consent" type="checkbox" required>
+    I agree to receive SMS messages from InstaInstru. Message frequency varies. Msg &amp; data rates may apply.
+    Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
+    <a href="/sms-terms.html" target="_blank" rel="noopener">SMS Terms</a>.
+  </label>
+  <button type="submit" disabled>Submit</button>
+  <p class="muted">This page is for verification/demo purposes only.</p>
+</form>
+<script>
+  const phone=document.getElementById('phone');
+  const consent=document.getElementById('consent');
+  const btn=document.querySelector('button');
+  function check(){ btn.disabled=!(phone.value && consent.checked); }
+  phone.addEventListener('input',check); consent.addEventListener('change',check);
+</script>
+</body></html>
