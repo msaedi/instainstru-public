@@ -1,33 +1,109 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Example SMS Opt-In — InstaInstru</title>
-<style>
- body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:700px;margin:0 auto;padding:24px;line-height:1.6}
- label{display:block;margin:8px 0 4px}
- input[type="tel"]{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:8px}
- button{margin-top:12px;padding:10px 16px;border:0;border-radius:8px;background:#0b5fff;color:#fff;cursor:pointer}
- .muted{color:#6b7280;font-size:14px}
-</style>
-</head><body>
-<h1>Example SMS Opt-In</h1>
-<p>This demo shows how InstaInstru collects consent to send SMS messages.</p>
-<form>
-  <label for="phone">Mobile number</label>
-  <input id="phone" type="tel" placeholder="+1 646 555 1234" required>
-  <label>
-    <input id="consent" type="checkbox" required>
-    I agree to receive SMS messages from InstaInstru. Message frequency varies. Msg &amp; data rates may apply.
-    Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help.
-    <a href="/sms-terms.html" target="_blank" rel="noopener">SMS Terms</a>.
-  </label>
-  <button type="submit" disabled>Submit</button>
-  <p class="muted">This page is for verification/demo purposes only.</p>
-</form>
-<script>
-  const phone=document.getElementById('phone');
-  const consent=document.getElementById('consent');
-  const btn=document.querySelector('button');
-  function check(){ btn.disabled=!(phone.value && consent.checked); }
-  phone.addEventListener('input',check); consent.addEventListener('change',check);
-</script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SMS Opt-In — iNSTAiNSTRU</title>
+  <!-- Keep public but out of search -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <style>
+    :root{
+      --bg:#0b1020;--panel:rgba(255,255,255,.05);--border:#334155;
+      --fg:#e5e7eb;--muted:#94a3b8;--accent:#93c5fd;--radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(900px 600px at 15% -10%, #0b1226 0, transparent 60%),
+                      radial-gradient(800px 500px at 120% 20%, #071224 0, transparent 55%),
+                      linear-gradient(180deg,#0d1326,#0b1020);
+         color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;line-height:1.6}
+    .wrap{max-width:760px;margin:0 auto;padding:32px 20px}
+    h1{margin:0 0 18px;font-size:clamp(26px,4vw,36px);color:#fff}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+    label{display:block;margin:10px 0 6px}
+    input[type="text"],input[type="email"],input[type="tel"]{
+      width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);
+      background:rgba(255,255,255,.04);color:var(--fg)
+    }
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin-top:10px}
+    .consent input{margin-top:4px}
+    a{color:var(--accent);text-underline-offset:3px}
+    .muted{color:var(--muted);font-size:14px}
+    button{
+      margin-top:14px;padding:12px 16px;border:0;border-radius:12px;background:var(--accent);color:#0b1020;
+      font-weight:600;cursor:not-allowed;opacity:.6;transition:opacity .2s ease
+    }
+    button.enabled{cursor:pointer;opacity:1}
+    .note{margin-top:8px;font-size:13px;color:var(--muted)}
+    .success{margin-top:14px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);
+      padding:10px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SMS Opt-In — iNSTAiNSTRU</h1>
+    <div class="card">
+      <form id="optin" aria-describedby="disclosure">
+        <div class="row">
+          <div>
+            <label for="first">First name*</label>
+            <input id="first" name="first" type="text" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="last">Last name</label>
+            <input id="last" name="last" type="text" autocomplete="family-name">
+          </div>
+        </div>
+
+        <label for="email">Email*</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <label for="phone">Mobile number*</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+1 646 555 1234" required>
+
+        <!-- REQUIRED consent for transactional / conversational -->
+        <div class="consent">
+          <input id="consent-txn" name="consent_txn" type="checkbox" required>
+          <label for="consent-txn">
+            I agree to receive SMS from <strong>iNSTAiNSTRU</strong> related to my account, bookings, and support.
+            Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help.
+            Consent is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.
+            See our <a href="/sms-terms.html" target="_blank" rel="noopener">SMS Terms</a>,
+            <a href="/terms.html" target="_blank" rel="noopener">Terms of Service</a> and
+            <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <!-- OPTIONAL marketing consent (separate use case) -->
+        <div class="consent">
+          <input id="consent-mkt" name="consent_mkt" type="checkbox">
+          <label for="consent-mkt">I would like to receive occasional offers and news from iNSTAiNSTRU.</label>
+        </div>
+
+        <button id="submit" type="submit" disabled>Continue</button>
+        <div class="note muted" id="disclosure">
+          This page demonstrates how we collect opt-in consent. On submission in production, we store
+          timestamp, IP, user agent, and the exact consent text agreed to.
+        </div>
+        <div id="result" class="success" style="display:none">Thanks! Your example submission was recorded.</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('optin');
+    const btn = document.getElementById('submit');
+    const requiredFields = ['first','email','phone','consent-txn'].map(id => document.getElementById(id));
+
+    function validate(){
+      const ok = requiredFields.every(el => (el.type==='checkbox'? el.checked : !!el.value.trim()));
+      btn.disabled = !ok; btn.classList.toggle('enabled', ok);
+    }
+    requiredFields.forEach(el => el.addEventListener(el.type==='checkbox'?'change':'input', validate));
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('result').style.display='block';
+    });
+  </script>
+</body>
+</html>

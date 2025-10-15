@@ -1,2 +1,13 @@
-.vercel
+# OS / editors
 .DS_Store
+Thumbs.db
+*.log
+
+# Vercel local metadata (do not commit)
+.vercel/
+
+# Node (only matters if you add a build later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
