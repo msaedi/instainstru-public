@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SMS Opt-In — iNSTAiNSTRU</title>
+  <title>SMS Opt-In — InstaInstru</title>
   <!-- Keep public but out of search -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <style>
@@ -41,7 +41,7 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>SMS Opt-In — iNSTAiNSTRU</h1>
+    <h1>SMS Opt-In — InstaInstru</h1>
     <div class="card">
       <form id="optin" aria-describedby="disclosure">
         <div class="row">
@@ -65,7 +65,7 @@
         <div class="consent">
           <input id="consent-txn" name="consent_txn" type="checkbox" required>
           <label for="consent-txn">
-            I agree to receive SMS from <strong>iNSTAiNSTRU</strong> related to my account, bookings, and support.
+            I agree to receive SMS from <strong>InstaInstru</strong> related to my account, bookings, and support.
             Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help.
             Consent is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.
             See our <a href="/sms-terms.html" target="_blank" rel="noopener">SMS Terms</a>,
@@ -77,13 +77,14 @@
         <!-- OPTIONAL marketing consent (separate use case) -->
         <div class="consent">
           <input id="consent-mkt" name="consent_mkt" type="checkbox">
-          <label for="consent-mkt">I would like to receive occasional offers and news from iNSTAiNSTRU.</label>
+          <label for="consent-mkt">I would like to receive occasional offers and news from InstaInstru.</label>
         </div>
 
         <button id="submit" type="submit" disabled>Continue</button>
         <div class="note muted" id="disclosure">
           This page demonstrates how we collect opt-in consent. On submission in production, we store
-          timestamp, IP, user agent, and the exact consent text agreed to.
+          phone number, name (if provided), email (if provided), timestamp, IP, user agent, page URL,
+          and the exact consent text version agreed to.
         </div>
         <div id="result" class="success" style="display:none">Thanks! Your example submission was recorded.</div>
       </form>

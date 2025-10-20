@@ -22,8 +22,27 @@ Two public pages for Twilio toll-free messaging verification:
 
 ## Twilio Toll-Free Verification
 - Use case: Customer Care / Conversational
-- Opt-in type: Web form (and optionally via text keyword)
+- Opt-in type: Web/Online opt-in only
 - Proof of consent URLs:
   - https://instainstru.com/sms-terms.html
   - https://instainstru.com/sms-opt-in.html
 - STOP/HELP per pages; frequency: varies by activity; contact: support@instainstru.com
+
+## TFV RESUBMISSION (copy into Twilio form)
+
+- **Business Entity / Legal Name:** InstaInstru LLC (DBA: InstaInstru)
+- **Website:** https://instainstru.com
+- **Use Case:** Customer Care / Conversational (non-marketing). We text students about booking confirmations/updates and two-way support (e.g., rescheduling, instructor messages). Optional marketing messages are sent only if the separate marketing checkbox is selected.
+- **Opt-in Type(s):** Web/Online Opt-in ONLY (no verbal, no QR, no text keyword).
+- **Opt-in Workflow (exact):** Users provide their mobile number on our web form and **must check a standalone consent checkbox** branded “InstaInstru” (not preselected). The consent language includes STOP/HELP, message frequency varies, and Msg & data rates may apply. See proof URLs below.
+- **Proof of Consent URLs (public):**
+  - https://instainstru.com/sms-opt-in.html
+  - https://instainstru.com/sms-terms.html
+- **Opt-out Keywords:** STOP, CANCEL, END, QUIT, UNSUBSCRIBE — immediate cessation; confirmation reply sent.  
+- **Help:** HELP — we reply with contact info (support@instainstru.com) and a brief help message.
+- **Message Frequency:** Varies by activity.
+- **Sample Messages:**
+  - “InstaInstru: Your lesson with {{instructor}} on {{date}} at {{time}} is confirmed. Reply HELP for help, STOP to opt out.”
+  - “InstaInstru: Your booking request was updated. Check your email for details. Reply HELP for help, STOP to opt out.”
+  - “InstaInstru Support: Thanks for reaching out—how can we help? Reply STOP to opt out.”
+- **Data Retention (Consent Records):** We store phone, timestamp, IP, user agent, page URL, and the exact consent text version agreed to for audit and compliance.
