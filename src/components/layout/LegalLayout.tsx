@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BRAND, LINKS } from "@/lib/constants";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 interface LegalLayoutProps {
   title: string;
@@ -9,33 +11,27 @@ interface LegalLayoutProps {
 
 export function LegalLayout({ title, children }: LegalLayoutProps) {
   return (
-    <main className="min-h-screen bg-gradient-hero">
-      <div className="mx-auto max-w-4xl px-4 py-8">
-        <Link
-          href={LINKS.internal.home}
-          className="mb-6 inline-flex items-center text-brand-purple transition-colors hover:text-brand-purple-dark"
-        >
-          ← Back to {BRAND.name}
-        </Link>
+    <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
+      <Header />
 
-        <h1 className="mb-8 text-3xl font-bold text-surface-foreground md:text-4xl">
-          {title}
-        </h1>
+      <main className="flex-1 bg-gradient-hero">
+        <div className="mx-auto max-w-4xl px-4 py-8">
+          <Link
+            href={LINKS.internal.home}
+            className="mb-6 inline-flex items-center text-brand-purple transition-colors hover:underline dark:text-brand-lavender"
+          >
+            ← Back to {BRAND.name}
+          </Link>
 
-        <div className="space-y-6">{children}</div>
+          <h1 className="mb-8 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+            {title}
+          </h1>
 
-        <footer className="mt-12 border-t border-surface-border pt-8 text-sm text-surface-muted">
-          <p>
-            iNSTAiNSTRU LLC · New York, NY ·{" "}
-            <a
-              href={BRAND.urls.support}
-              className="text-brand-purple hover:underline"
-            >
-              support@instainstru.com
-            </a>
-          </p>
-        </footer>
-      </div>
-    </main>
+          <div className="space-y-6">{children}</div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }

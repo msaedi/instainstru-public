@@ -43,7 +43,7 @@ export function SmsOptInForm() {
       >
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label htmlFor="first" className="text-sm text-surface-muted">
+            <label htmlFor="first" className="text-sm text-gray-600 dark:text-gray-300">
               First name*
             </label>
             <Input
@@ -62,7 +62,7 @@ export function SmsOptInForm() {
             />
           </div>
           <div>
-            <label htmlFor="last" className="text-sm text-surface-muted">
+            <label htmlFor="last" className="text-sm text-gray-600 dark:text-gray-300">
               Last name
             </label>
             <Input
@@ -82,7 +82,7 @@ export function SmsOptInForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="text-sm text-surface-muted">
+          <label htmlFor="email" className="text-sm text-gray-600 dark:text-gray-300">
             Email*
           </label>
           <Input
@@ -102,7 +102,7 @@ export function SmsOptInForm() {
         </div>
 
         <div>
-          <label htmlFor="phone" className="text-sm text-surface-muted">
+          <label htmlFor="phone" className="text-sm text-gray-600 dark:text-gray-300">
             Mobile number*
           </label>
           <Input
@@ -137,7 +137,7 @@ export function SmsOptInForm() {
             }
             className="mt-1 h-4 w-4 accent-brand-lavender"
           />
-          <label htmlFor="consent-txn" className="text-sm text-surface-muted">
+          <label htmlFor="consent-txn" className="text-sm text-gray-600 dark:text-gray-300">
             I agree to receive SMS from <strong>iNSTAiNSTRU</strong> about my account,
             booking confirmations/updates, and support (e.g., rescheduling, instructor
             messages). Message frequency varies. Msg &amp; data rates may apply. Reply{" "}
@@ -148,7 +148,7 @@ export function SmsOptInForm() {
               href="/sms-terms"
               target="_blank"
               rel="noopener"
-              className="text-brand-purple hover:underline"
+              className="text-brand-purple hover:underline dark:text-brand-lavender"
             >
               SMS Terms
             </a>
@@ -157,7 +157,7 @@ export function SmsOptInForm() {
               href="/terms"
               target="_blank"
               rel="noopener"
-              className="text-brand-purple hover:underline"
+              className="text-brand-purple hover:underline dark:text-brand-lavender"
             >
               Terms
             </a>
@@ -166,7 +166,7 @@ export function SmsOptInForm() {
               href="/privacy"
               target="_blank"
               rel="noopener"
-              className="text-brand-purple hover:underline"
+              className="text-brand-purple hover:underline dark:text-brand-lavender"
             >
               Privacy
             </a>
@@ -178,14 +178,14 @@ export function SmsOptInForm() {
           Continue
         </Button>
 
-        <div className="text-sm text-surface-muted" id="disclosure">
+        <div className="text-sm text-gray-600 dark:text-gray-400" id="disclosure">
           This page demonstrates how we collect opt-in consent. On submission in production,
           we store phone number, name (if provided), email (if provided), timestamp, IP, user
           agent, page URL, and the exact consent text version agreed to.
         </div>
 
         {submitted ? (
-          <div className="rounded-xl border border-emerald-400/40 bg-emerald-400/10 p-3 text-sm text-emerald-700">
+          <div className="rounded-xl border border-emerald-400/40 bg-emerald-400/10 p-3 text-sm text-emerald-700 dark:text-emerald-200">
             Thanks! Your example submission was recorded.
           </div>
         ) : null}

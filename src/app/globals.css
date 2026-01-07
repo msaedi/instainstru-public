@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Light theme as default */
+/* Light theme (default) */
 :root {
   --background: 255 255 255;
   --foreground: 15 23 42;
@@ -10,22 +10,25 @@
   --card-border: 226 232 240;
 }
 
-/* Dark theme (can be toggled later) */
+/* Dark theme */
 .dark {
-  --background: 11 16 32;
-  --foreground: 229 231 235;
+  --background: 15 23 42;
+  --foreground: 241 245 249;
   --muted: 148 163 184;
   --border: 51 65 85;
-  --card: 255 255 255 / 0.05;
-  --card-border: 148 163 184 / 0.18;
+  --card: 30 41 59;
+  --card-border: 51 65 85;
 }
 
 body {
   background: rgb(var(--background));
   color: rgb(var(--foreground));
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Brand gradient background for hero/sections */
+/* Light mode hero gradient */
 .bg-gradient-hero {
   background: linear-gradient(
     180deg,
@@ -35,12 +38,22 @@ body {
   );
 }
 
-/* Subtle purple tint for sections */
+/* Dark mode hero gradient */
+.dark .bg-gradient-hero {
+  background: linear-gradient(180deg, rgb(15 23 42) 0%, rgb(30 27 75) 50%, rgb(49 46 129) 100%);
+}
+
+/* Light mode section alt */
 .bg-section-alt {
   background: rgb(250 245 255);
 }
 
-/* Glass card effect (light mode) */
+/* Dark mode section alt */
+.dark .bg-section-alt {
+  background: rgb(30 41 59);
+}
+
+/* Glass card - light mode */
 .glass-card {
   background: rgb(255 255 255 / 0.8);
   border: 1px solid rgb(var(--card-border));
@@ -51,7 +64,15 @@ body {
     0 2px 4px -2px rgb(0 0 0 / 0.05);
 }
 
-/* Glass card hover effect */
+/* Glass card - dark mode */
+.dark .glass-card {
+  background: rgb(30 41 59 / 0.8);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.3),
+    0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+/* Glass card hover */
 .glass-card-hover {
   transition: all 0.3s ease;
 }
@@ -59,7 +80,13 @@ body {
 .glass-card-hover:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 10px 25px -5px rgb(126 34 206 / 0.1),
-    0 8px 10px -6px rgb(126 34 206 / 0.05);
+    0 10px 25px -5px rgb(126 34 206 / 0.15),
+    0 8px 10px -6px rgb(126 34 206 / 0.1);
   border-color: rgb(192 132 252 / 0.5);
+}
+
+.dark .glass-card-hover:hover {
+  box-shadow:
+    0 10px 25px -5px rgb(192 132 252 / 0.2),
+    0 8px 10px -6px rgb(192 132 252 / 0.15);
 }

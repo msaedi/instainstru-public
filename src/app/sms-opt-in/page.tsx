@@ -12,18 +12,18 @@ export default function SmsOptInPage() {
     <LegalLayout title="SMS Opt-In - iNSTAiNSTRU">
       <SmsOptInForm />
 
-      <p className="text-sm text-surface-muted">
+      <p className="text-sm text-gray-600 dark:text-gray-400">
         <strong>We only collect opt-in via web form.</strong> We do not accept verbal/phone or
         keyword opt-ins.
       </p>
 
-      <p className="text-sm text-surface-muted">
+      <p className="text-sm text-gray-600 dark:text-gray-400">
         See our{" "}
         <a
           href="/terms"
           target="_blank"
           rel="noopener"
-          className="text-brand-purple hover:underline"
+          className="text-brand-purple hover:underline dark:text-brand-lavender"
         >
           Terms
         </a>{" "}
@@ -32,7 +32,7 @@ export default function SmsOptInPage() {
           href="/privacy"
           target="_blank"
           rel="noopener"
-          className="text-brand-purple hover:underline"
+          className="text-brand-purple hover:underline dark:text-brand-lavender"
         >
           Privacy
         </a>{" "}
