@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Custom gradient background matching brand */
+.bg-gradient-brand {
+  background:
+    radial-gradient(900px 600px at 15% -10%, rgba(126, 34, 206, 0.15) 0, transparent 60%),
+    radial-gradient(800px 500px at 120% 20%, rgba(192, 132, 252, 0.1) 0, transparent 55%),
+    linear-gradient(180deg, #0d1326, #0b1020);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+}
