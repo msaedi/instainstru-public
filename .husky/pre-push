@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "🔍 Running strict-all typecheck..."
+npm run typecheck:strict-all || { echo "❌ Typecheck failed. Push aborted."; exit 1; }
+echo "✅ Typecheck passed!"

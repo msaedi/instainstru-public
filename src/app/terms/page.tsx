@@ -15,7 +15,7 @@ export default function TermsPage() {
           <em>Last updated: {new Date().toISOString().slice(0, 10)}</em>
         </p>
         <p>
-          iNSTAiNSTRU LLC ("iNSTAiNSTRU") connects students with independent
+          iNSTAiNSTRU LLC (&quot;iNSTAiNSTRU&quot;) connects students with independent
           instructors. By using the service, you agree to these Terms.
         </p>
       </div>
@@ -62,7 +62,7 @@ export default function TermsPage() {
       <div className="glass-card p-6">
         <h2 className="text-xl font-semibold text-white mb-4">Disclaimers</h2>
         <p className="text-gray-300">
-          Services are provided "as is." iNSTAiNSTRU is not liable for indirect
+          Services are provided &quot;as is.&quot; iNSTAiNSTRU is not liable for indirect
           or incidental damages.
         </p>
       </div>

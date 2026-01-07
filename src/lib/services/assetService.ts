@@ -1,4 +1,5 @@
 import { env } from "@/lib/env";
+import { logger } from "@/lib/logger";
 
 /**
  * Cloudflare Image Transformation options
@@ -48,7 +49,7 @@ export function getOptimizedUrl(
   const baseUrl = env.r2Url;
 
   if (!baseUrl) {
-    console.warn("R2_URL not configured, returning path as-is");
+    logger.warn("R2_URL not configured, returning path as-is");
     return path;
   }
 

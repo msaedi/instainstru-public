@@ -76,16 +76,16 @@ export default function SmsTermsPage() {
         </h2>
         <ul className="list-disc list-inside space-y-2 text-gray-300">
           <li>
-            "iNSTAiNSTRU: Your lesson with {"{{instructor}}"} on {"{{date}}"} at{" "}
-            {"{{time}}"} is confirmed. Reply HELP for help, STOP to opt out."
+            &quot;iNSTAiNSTRU: Your lesson with {"{{instructor}}"} on {"{{date}}"}{" "}
+            at {"{{time}}"} is confirmed. Reply HELP for help, STOP to opt out.&quot;
           </li>
           <li>
-            "iNSTAiNSTRU: Your booking request was updated. Check your email for
-            details. Reply HELP for help, STOP to opt out."
+            &quot;iNSTAiNSTRU: Your booking request was updated. Check your email
+            for details. Reply HELP for help, STOP to opt out.&quot;
           </li>
           <li>
-            "iNSTAiNSTRU Support: Thanks for reaching out—how can we help? Reply
-            STOP to opt out."
+            &quot;iNSTAiNSTRU Support: Thanks for reaching out—how can we help?
+            Reply STOP to opt out.&quot;
           </li>
         </ul>
       </div>

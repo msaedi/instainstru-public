@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { getDirectUrl, getOptimizedUrl } from "@/lib/services/assetService";
 
@@ -30,7 +30,6 @@ export function OptimizedVideo({
   loop = true,
   muted = true,
 }: OptimizedVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -50,7 +49,6 @@ export function OptimizedVideo({
   return (
     <div className={cn("relative overflow-hidden", className)}>
       <video
-        ref={videoRef}
         poster={posterSrc}
         autoPlay={autoPlay}
         loop={loop}

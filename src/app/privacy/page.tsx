@@ -15,7 +15,7 @@ export default function PrivacyPage() {
           <em>Last updated: {new Date().toISOString().slice(0, 10)}</em>
         </p>
         <p>
-          iNSTAiNSTRU LLC ("iNSTAiNSTRU", "we", "us") operates a
+          iNSTAiNSTRU LLC (&quot;iNSTAiNSTRU&quot;, &quot;we&quot;, &quot;us&quot;) operates a
           marketplace connecting students and independent instructors for
           in-person and online lessons.
         </p>

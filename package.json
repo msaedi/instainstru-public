@@ -3,10 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:ci": "eslint . --max-warnings=0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck:strict": "tsc -p tsconfig.strict.json --noEmit",
+    "typecheck:strict-all": "tsc -p tsconfig.strict-all.json --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
+    "prepare": "is-ci || husky",
+    "preflight": "npm run lint:ci && npm run typecheck:strict-all",
+    "verify": "npm run lint && npm run typecheck:strict-all && npm run build"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix --max-warnings=0"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -20,8 +38,16 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "eslint-plugin-no-only-tests": "^3.3.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.7.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
