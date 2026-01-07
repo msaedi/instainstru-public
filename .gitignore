@@ -33,6 +33,11 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# asset uploads (don't commit source files, only manifest)
+assets/**/*
+!assets/.gitkeep
+assets-manifest.json
+
 # vercel
 .vercel
 

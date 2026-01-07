@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "fitness training",
     "language lessons",
     "private instruction",
+    "New York instructors",
   ],
   authors: [{ name: "iNSTAiNSTRU LLC" }],
   openGraph: {
@@ -44,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-surface text-gray-200 antialiased">
+      <body className="min-h-screen bg-surface text-surface-foreground antialiased">
         {children}
       </body>
     </html>

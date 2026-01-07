@@ -9,21 +9,21 @@ export const metadata: Metadata = {
 
 export default function SmsOptInPage() {
   return (
-    <LegalLayout title="SMS Opt-In — iNSTAiNSTRU">
+    <LegalLayout title="SMS Opt-In - iNSTAiNSTRU">
       <SmsOptInForm />
 
-      <p className="text-sm text-gray-400">
-        <strong>We only collect opt-in via web form.</strong> We do not accept
-        verbal/phone or keyword opt-ins.
+      <p className="text-sm text-surface-muted">
+        <strong>We only collect opt-in via web form.</strong> We do not accept verbal/phone or
+        keyword opt-ins.
       </p>
 
-      <p className="text-sm text-gray-400">
+      <p className="text-sm text-surface-muted">
         See our{" "}
         <a
           href="/terms"
           target="_blank"
           rel="noopener"
-          className="text-brand-lavender hover:underline"
+          className="text-brand-purple hover:underline"
         >
           Terms
         </a>{" "}
@@ -32,7 +32,7 @@ export default function SmsOptInPage() {
           href="/privacy"
           target="_blank"
           rel="noopener"
-          className="text-brand-lavender hover:underline"
+          className="text-brand-purple hover:underline"
         >
           Privacy
         </a>{" "}

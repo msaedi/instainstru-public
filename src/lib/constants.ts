@@ -77,4 +77,9 @@ export const ASSETS = {
       securePayments: "/landing/trust/secure-payments.webp",
     },
   },
+
+  animations: {
+    hero: "/animations/hero.json",
+    learning: "/animations/learning.json",
+  },
 } as const;

@@ -9,27 +9,27 @@ interface LegalLayoutProps {
 
 export function LegalLayout({ title, children }: LegalLayoutProps) {
   return (
-    <main className="bg-gradient-brand min-h-screen">
+    <main className="min-h-screen bg-gradient-hero">
       <div className="mx-auto max-w-4xl px-4 py-8">
         <Link
           href={LINKS.internal.home}
-          className="mb-6 inline-flex items-center text-brand-lavender hover:text-white transition-colors"
+          className="mb-6 inline-flex items-center text-brand-purple transition-colors hover:text-brand-purple-dark"
         >
           ← Back to {BRAND.name}
         </Link>
 
-        <h1 className="text-3xl font-bold text-white md:text-4xl mb-8">
+        <h1 className="mb-8 text-3xl font-bold text-surface-foreground md:text-4xl">
           {title}
         </h1>
 
         <div className="space-y-6">{children}</div>
 
-        <footer className="mt-12 pt-8 border-t border-surface-border text-sm text-gray-400">
+        <footer className="mt-12 border-t border-surface-border pt-8 text-sm text-surface-muted">
           <p>
             iNSTAiNSTRU LLC · New York, NY ·{" "}
             <a
               href={BRAND.urls.support}
-              className="text-brand-lavender hover:underline"
+              className="text-brand-purple hover:underline"
             >
               support@instainstru.com
             </a>

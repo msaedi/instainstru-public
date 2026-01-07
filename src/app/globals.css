@@ -1,17 +1,65 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* Custom gradient background matching brand */
-.bg-gradient-brand {
-  background:
-    radial-gradient(900px 600px at 15% -10%, rgba(126, 34, 206, 0.15) 0, transparent 60%),
-    radial-gradient(800px 500px at 120% 20%, rgba(192, 132, 252, 0.1) 0, transparent 55%),
-    linear-gradient(180deg, #0d1326, #0b1020);
+/* Light theme as default */
+:root {
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+  --muted: 100 116 139;
+  --border: 226 232 240;
+  --card: 248 250 252;
+  --card-border: 226 232 240;
 }
 
-/* Glass card effect */
+/* Dark theme (can be toggled later) */
+.dark {
+  --background: 11 16 32;
+  --foreground: 229 231 235;
+  --muted: 148 163 184;
+  --border: 51 65 85;
+  --card: 255 255 255 / 0.05;
+  --card-border: 148 163 184 / 0.18;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+/* Brand gradient background for hero/sections */
+.bg-gradient-hero {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255) 0%,
+    rgb(250 245 255) 50%,
+    rgb(243 232 255) 100%
+  );
+}
+
+/* Subtle purple tint for sections */
+.bg-section-alt {
+  background: rgb(250 245 255);
+}
+
+/* Glass card effect (light mode) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 14px;
+  background: rgb(255 255 255 / 0.8);
+  border: 1px solid rgb(var(--card-border));
+  border-radius: 16px;
   backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.05),
+    0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+/* Glass card hover effect */
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px -5px rgb(126 34 206 / 0.1),
+    0 8px 10px -6px rgb(126 34 206 / 0.05);
+  border-color: rgb(192 132 252 / 0.5);
 }
