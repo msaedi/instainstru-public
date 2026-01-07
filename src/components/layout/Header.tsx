@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { BRAND } from "@/lib/constants";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Header() {
   return (
@@ -16,15 +13,12 @@ export function Header() {
             {BRAND.name}
           </Link>
 
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <Link
-              href="https://beta.instainstru.com/login"
-              className="rounded-full bg-brand-purple px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-purple-dark"
-            >
-              Login
-            </Link>
-          </div>
+          <Link
+            href="https://beta.instainstru.com/login"
+            className="glass-cta glass-cta-sm"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </header>

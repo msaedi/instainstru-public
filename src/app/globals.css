@@ -10,14 +10,15 @@
   --card-border: 226 232 240;
 }
 
-/* Dark theme */
-.dark {
-  --background: 15 23 42;
-  --foreground: 241 245 249;
-  --muted: 148 163 184;
-  --border: 51 65 85;
-  --card: 30 41 59;
-  --card-border: 51 65 85;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 15 23 42;
+    --foreground: 241 245 249;
+    --muted: 148 163 184;
+    --border: 51 65 85;
+    --card: 30 41 59;
+    --card-border: 51 65 85;
+  }
 }
 
 body {
@@ -38,9 +39,10 @@ body {
   );
 }
 
-/* Dark mode hero gradient */
-.dark .bg-gradient-hero {
-  background: linear-gradient(180deg, rgb(15 23 42) 0%, rgb(30 27 75) 50%, rgb(49 46 129) 100%);
+@media (prefers-color-scheme: dark) {
+  .bg-gradient-hero {
+    background: linear-gradient(180deg, rgb(15 23 42) 0%, rgb(30 27 75) 50%, rgb(49 46 129) 100%);
+  }
 }
 
 /* Light mode section alt */
@@ -48,9 +50,10 @@ body {
   background: rgb(250 245 255);
 }
 
-/* Dark mode section alt */
-.dark .bg-section-alt {
-  background: rgb(30 41 59);
+@media (prefers-color-scheme: dark) {
+  .bg-section-alt {
+    background: rgb(30 41 59);
+  }
 }
 
 /* Glass card - light mode */
@@ -64,12 +67,13 @@ body {
     0 2px 4px -2px rgb(0 0 0 / 0.05);
 }
 
-/* Glass card - dark mode */
-.dark .glass-card {
-  background: rgb(30 41 59 / 0.8);
-  box-shadow:
-    0 4px 6px -1px rgb(0 0 0 / 0.3),
-    0 2px 4px -2px rgb(0 0 0 / 0.2);
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    background: rgb(30 41 59 / 0.8);
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.3),
+      0 2px 4px -2px rgb(0 0 0 / 0.2);
+  }
 }
 
 /* Glass card hover */
@@ -85,8 +89,24 @@ body {
   border-color: rgb(192 132 252 / 0.5);
 }
 
-.dark .glass-card-hover:hover {
-  box-shadow:
-    0 10px 25px -5px rgb(192 132 252 / 0.2),
-    0 8px 10px -6px rgb(192 132 252 / 0.15);
+@media (prefers-color-scheme: dark) {
+  .glass-card-hover:hover {
+    box-shadow:
+      0 10px 25px -5px rgb(192 132 252 / 0.2),
+      0 8px 10px -6px rgb(192 132 252 / 0.15);
+  }
+}
+
+.glass-cta {
+  @apply rounded-full border border-gray-200/50 bg-white/70 px-6 py-3 text-base font-semibold text-gray-700 backdrop-blur-md shadow-lg shadow-black/5 transition-all duration-300 hover:bg-white/90 hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-300/50 sm:px-8 sm:py-4 sm:text-lg;
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-cta {
+    @apply border-gray-700/50 bg-gray-800/70 text-white shadow-black/20 hover:bg-gray-700/90 hover:shadow-purple-500/20 hover:border-purple-500/50;
+  }
+}
+
+.glass-cta-sm {
+  @apply px-5 py-2 text-sm;
 }

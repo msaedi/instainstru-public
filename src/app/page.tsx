@@ -22,18 +22,12 @@ export default function HomePage() {
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="https://beta.instainstru.com/instructor/join"
-                className="group rounded-full bg-brand-purple px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-purple/25 transition-all hover:scale-105 hover:bg-brand-purple-dark sm:px-8 sm:py-4 sm:text-lg"
-              >
-                Have a code? <span className="group-hover:underline">Join here →</span>
+              <Link href="https://beta.instainstru.com/instructor/join" className="glass-cta">
+                Have a code? <span className="font-bold">Join here →</span>
               </Link>
 
-              <Link
-                href="https://beta.instainstru.com/instructor/apply"
-                className="rounded-full border-2 border-brand-purple bg-white px-6 py-3 text-base font-semibold text-brand-purple transition-all hover:scale-105 hover:bg-purple-50 dark:border-brand-lavender dark:bg-gray-800 dark:text-brand-lavender dark:hover:bg-gray-700 sm:px-8 sm:py-4 sm:text-lg"
-              >
-                Want to teach? <span className="underline">Apply here</span>
+              <Link href="https://beta.instainstru.com/instructor/apply" className="glass-cta">
+                Want to teach? <span className="font-bold underline">Apply here</span>
               </Link>
             </div>
           </div>
