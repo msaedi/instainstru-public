@@ -46,6 +46,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="dns-prefetch" href="https://beta.instainstru.com" />
+        <link rel="preconnect" href="https://beta.instainstru.com" />
+        <link rel="dns-prefetch" href="https://assets.instainstru.com" />
+        <link
+          rel="preconnect"
+          href="https://assets.instainstru.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://assets.instainstru.com/animations/landing-page.mp4"
+          as="video"
+          type="video/mp4"
+        />
+      </head>
       <body className="min-h-screen bg-surface text-surface-foreground antialiased">
         {children}
       </body>
