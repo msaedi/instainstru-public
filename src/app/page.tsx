@@ -56,8 +56,6 @@ export default function HomePage() {
         {layout === 'background' && <HeroBackgroundLayout />}
         {layout === 'side-by-side' && <HeroSideBySideLayout />}
         {layout === 'centered' && <HeroCenteredLayout />}
-
-        <ComingSoonSection />
       </main>
 
       <Footer />
@@ -67,24 +65,12 @@ export default function HomePage() {
 
 function HeroCurrentLayout() {
   return (
-    <section className="bg-gradient-hero px-4 py-16 sm:py-24">
+    <section className="bg-gradient-hero px-4 py-16 sm:py-24 overflow-x-hidden">
       <div className="mx-auto max-w-4xl text-center">
         <HeroHeadline />
         <HeroDescription />
 
-        <div className="my-10 mx-auto max-w-sm sm:max-w-2xl">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster={HERO_POSTER}
-            className="w-full rounded-2xl shadow-2xl shadow-purple-500/20 dark:shadow-purple-500/10"
-          >
-            <source src={VIDEO_URL} type="video/mp4" />
-          </video>
-        </div>
+        <HeroVideo className="my-10" maxWidthClass="max-w-sm sm:max-w-2xl" />
 
         <HeroCTAs />
       </div>
@@ -94,7 +80,7 @@ function HeroCurrentLayout() {
 
 function HeroBackgroundLayout() {
   return (
-    <section className="relative flex min-h-[600px] items-center overflow-hidden bg-gradient-hero px-4 py-16 sm:py-24">
+    <section className="relative flex min-h-[600px] items-center overflow-hidden bg-gradient-hero px-4 py-16 sm:py-24 overflow-x-hidden">
       <video
         autoPlay
         loop
@@ -110,9 +96,7 @@ function HeroBackgroundLayout() {
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <HeroHeadline />
         <HeroDescription />
-        <div className="mt-10">
-          <HeroCTAs />
-        </div>
+        <HeroCTAs />
       </div>
     </section>
   );
@@ -120,29 +104,17 @@ function HeroBackgroundLayout() {
 
 function HeroSideBySideLayout() {
   return (
-    <section className="bg-gradient-hero px-4 py-16 sm:py-24">
+    <section className="bg-gradient-hero px-4 py-16 sm:py-24 overflow-x-hidden">
       <div className="mx-auto max-w-6xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="text-center lg:text-left">
             <HeroHeadline />
             <HeroDescription />
-            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-              <HeroCTAs inline />
-            </div>
+            <HeroCTAs align="left" />
           </div>
 
           <div className="relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster={HERO_POSTER}
-              className="w-full rounded-2xl shadow-2xl shadow-purple-500/20 dark:shadow-purple-500/10"
-            >
-              <source src={VIDEO_URL} type="video/mp4" />
-            </video>
+            <HeroVideo />
           </div>
         </div>
       </div>
@@ -152,24 +124,12 @@ function HeroSideBySideLayout() {
 
 function HeroCenteredLayout() {
   return (
-    <section className="bg-gradient-hero px-4 py-16 sm:py-24">
+    <section className="bg-gradient-hero px-4 py-16 sm:py-24 overflow-x-hidden">
       <div className="mx-auto max-w-4xl text-center">
         <HeroHeadline />
         <HeroDescription />
 
-        <div className="my-10 mx-auto max-w-xl">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster={HERO_POSTER}
-            className="w-full rounded-2xl shadow-2xl shadow-purple-500/20 dark:shadow-purple-500/10"
-          >
-            <source src={VIDEO_URL} type="video/mp4" />
-          </video>
-        </div>
+        <HeroVideo className="my-10" maxWidthClass="max-w-xl" />
 
         <HeroCTAs />
       </div>
@@ -179,86 +139,133 @@ function HeroCenteredLayout() {
 
 function HeroHeadline() {
   return (
-    <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
-      Instant learning with{' '}
-      <span className="text-brand-purple dark:text-brand-lavender">{BRAND.name}</span>
+    <h1 className="text-gray-900">
+      <span className="block text-2xl font-semibold sm:text-3xl lg:text-4xl">
+        If you live in New York,
+      </span>
+      <span className="block text-4xl font-bold sm:text-5xl lg:text-6xl">{BRAND.name}</span>
+      <span className="block text-2xl font-semibold sm:text-3xl lg:text-4xl">
+        is for you
+      </span>
     </h1>
   );
 }
 
 function HeroDescription() {
   return (
-    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl">
-      {BRAND.description}
+    <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-900 dark:text-gray-200 sm:text-xl">
+      Background-checked instructors, tutors, and coaches — bookable instantly, at your home
     </p>
   );
 }
 
-function HeroCTAs({ inline = false }: { inline?: boolean }) {
-  const links = (
-    <>
-      <Link href="https://beta.instainstru.com/instructor/join" className="glass-cta">
-        Have a code? <span className="font-bold">Join here →</span>
-      </Link>
-      <Link href="https://beta.instainstru.com/instructor/apply" className="glass-cta">
-        Want to teach? <span className="font-bold underline">Apply here</span>
-      </Link>
-    </>
+function HeroVideo({
+  className = "",
+  maxWidthClass = "max-w-2xl",
+}: {
+  className?: string;
+  maxWidthClass?: string;
+}) {
+  return (
+    <div className={`mx-auto w-full ${maxWidthClass} ${className}`}>
+      <div className="w-full overflow-hidden rounded-2xl bg-white/50 shadow-2xl shadow-purple-500/20 dark:shadow-purple-500/10">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster={HERO_POSTER}
+          className="block w-full"
+        >
+          <source src={VIDEO_URL} type="video/mp4" />
+        </video>
+      </div>
+    </div>
   );
-
-  if (inline) {
-    return links;
-  }
-
-  return <div className="flex flex-col justify-center gap-4 sm:flex-row">{links}</div>;
 }
 
-function ComingSoonSection() {
+function HeroCTAs({ align = "center" }: { align?: "center" | "left" }) {
+  const containerAlign = align === "left" ? "items-start text-left" : "items-center text-center";
+  const labelAlign =
+    align === "left" ? "w-full max-w-2xl" : "w-full max-w-2xl mx-auto justify-center";
+  const cardAlign = align === "left" ? "w-full max-w-5xl" : "w-full max-w-5xl mx-auto";
+  const innerAlign = align === "left" ? "items-start text-left" : "items-center text-center";
+
   return (
-    <section className="bg-section-alt px-4 py-16">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="mb-8 text-center text-2xl font-bold text-gray-900 dark:text-white">
-          🚧 Coming Soon
-        </h2>
-        <p className="mb-8 text-center text-gray-600 dark:text-gray-400">
-          We&apos;re building something amazing. Stay tuned!
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="glass-card glass-card-hover p-6">
-            <h3 className="font-semibold text-brand-purple dark:text-brand-lavender">R2 Assets</h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Cloudflare R2 integration with image transformations
+    <div className={`mt-10 flex flex-col ${containerAlign}`}>
+      <div
+        className={`relative flex items-center gap-4 text-base font-semibold uppercase tracking-[0.25em] text-gray-700 dark:text-gray-300 sm:text-lg ${labelAlign} before:absolute before:top-1/2 before:right-full before:h-0.5 before:w-screen before:-translate-y-1/2 before:bg-gray-300 before:content-[''] dark:before:bg-gray-600 after:absolute after:top-1/2 after:left-full after:h-0.5 after:w-screen after:-translate-y-1/2 after:bg-gray-300 after:content-[''] dark:after:bg-gray-600`}
+      >
+        <span className="h-0.5 flex-1 bg-gray-300 dark:bg-gray-600" />
+        <span className="whitespace-nowrap">Launching in NYC Soon</span>
+        <span className="h-0.5 flex-1 bg-gray-300 dark:bg-gray-600" />
+      </div>
+      <p className={`mt-3 text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400 ${labelAlign}`}>
+        Now onboarding founding instructors
+      </p>
+
+      <div className={`mt-6 ${cardAlign}`}>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="glass-card border border-white/60 bg-white/35 p-6 shadow-xl shadow-purple-500/10 backdrop-blur-md dark:border-gray-700/60 dark:bg-white/5 sm:p-8">
+            <div
+              className={`text-sm font-bold uppercase tracking-[0.2em] text-gray-700 dark:text-gray-300 ${innerAlign}`}
+            >
+              <span>For Instructors:</span>
+            </div>
+            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 ${innerAlign}`}>
+              Founding instructors lock in <span className="font-semibold">8%</span> platform fees
+              for life. Spots are limited.
             </p>
+            <div className="h-4" aria-hidden="true" />
+
+            <div className="mt-4 flex w-full flex-col gap-4 items-stretch">
+              <Link
+                href="https://beta.instainstru.com/instructor/join"
+                className="glass-cta w-full whitespace-nowrap"
+              >
+                Have a code? <span className="font-bold">Claim your spot</span>
+              </Link>
+              <Link
+                href="https://beta.instainstru.com/instructor/apply"
+                className="glass-cta w-full whitespace-nowrap"
+              >
+                Want to teach with us? <span className="font-bold">Apply here</span>
+              </Link>
+            </div>
           </div>
-          <div className="glass-card glass-card-hover p-6">
-            <h3 className="font-semibold text-brand-purple dark:text-brand-lavender">
-              Upload Script
-            </h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              npm run upload-assets for A-team
+
+          <div className="glass-card border border-white/60 bg-white/35 p-6 shadow-xl shadow-purple-500/10 backdrop-blur-md dark:border-gray-700/60 dark:bg-white/5 sm:p-8">
+            <div
+              className={`text-sm font-bold uppercase tracking-[0.2em] text-gray-700 dark:text-gray-300 ${innerAlign}`}
+            >
+              <span>For Students:</span>
+            </div>
+            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 ${innerAlign}`}>
+              We&apos;re onboarding our instructors now so you can book the best from day one.
+              Drop your email and we&apos;ll ping you once we&apos;re live.
             </p>
-          </div>
-          <div className="glass-card glass-card-hover p-6">
-            <h3 className="font-semibold text-brand-purple dark:text-brand-lavender">
-              Lottie Support
-            </h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Animated illustrations ready
-            </p>
-          </div>
-          <div className="glass-card glass-card-hover p-6">
-            <h3 className="font-semibold text-brand-purple dark:text-brand-lavender">
-              Framer Motion
-            </h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-              Premium animations configured
-            </p>
+
+            <div className="mt-4 flex w-full flex-col gap-3 items-stretch">
+              <label htmlFor="hero-student-email" className="sr-only">
+                Enter email
+              </label>
+              <input
+                id="hero-student-email"
+                name="hero-student-email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder="Enter email"
+                className="glass-input w-full"
+              />
+              <button type="button" className="glass-cta w-full whitespace-nowrap">
+                Notify Me →
+              </button>
+            </div>
           </div>
         </div>
-        <p className="mt-8 text-center text-sm text-gray-500 dark:text-gray-500">
-          Awaiting design assets from A-team...
-        </p>
       </div>
-    </section>
+    </div>
   );
 }

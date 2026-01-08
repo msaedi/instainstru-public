@@ -110,3 +110,21 @@ body {
 .glass-cta-sm {
   @apply px-5 py-2 text-sm;
 }
+
+.glass-input {
+  @apply w-full rounded-full border border-gray-200/50 bg-white/70 px-4 py-3 text-base text-gray-700 placeholder:text-gray-400 backdrop-blur-md shadow-lg shadow-black/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-white sm:px-5 sm:text-lg;
+}
+
+.brand-wordmark {
+  color: #7e22ce;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand-wordmark {
+    color: #c084fc;
+  }
+
+  .glass-input {
+    @apply border-gray-700/50 bg-gray-800/70 text-white placeholder:text-gray-400 shadow-black/20 focus:ring-purple-400 focus:ring-offset-gray-900;
+  }
+}
