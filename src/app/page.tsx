@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { BRAND } from '@/lib/constants';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { StudentWaitlistForm } from '@/components/forms/StudentWaitlistForm';
 
 const VIDEO_URL = 'https://assets.instainstru.com/animations/landing-page.mp4';
 const HERO_POSTER =
@@ -145,22 +146,8 @@ function HeroCTAs({ align = "center" }: { align?: "center" | "left" }) {
               Drop your email and we&apos;ll ping you once we&apos;re live.
             </p>
 
-            <div className="mt-4 flex w-full flex-col gap-3 items-stretch">
-              <label htmlFor="hero-student-email" className="sr-only">
-                Enter email
-              </label>
-              <input
-                id="hero-student-email"
-                name="hero-student-email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                placeholder="Enter email"
-                className="glass-input w-full"
-              />
-              <button type="button" className="glass-cta w-full whitespace-nowrap">
-                Notify Me →
-              </button>
+            <div className="mt-4 w-full">
+              <StudentWaitlistForm />
             </div>
           </div>
         </div>
