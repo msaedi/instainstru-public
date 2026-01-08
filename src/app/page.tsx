@@ -39,7 +39,7 @@ function HeroCurrentLayout() {
 
 function HeroHeadline() {
   return (
-    <h1 className="text-gray-900">
+    <h1 className="text-gray-900 dark:text-gray-200">
       <span className="block text-2xl font-semibold sm:text-3xl lg:text-4xl">
         If you live in New York,
       </span>
