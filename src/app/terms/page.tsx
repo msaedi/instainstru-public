@@ -4,7 +4,11 @@ import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  robots: { index: false, follow: false },
+  description:
+    "iNSTAiNSTRU terms of service - rules and guidelines for using our platform.",
+  alternates: {
+    canonical: "https://instainstru.com/terms",
+  },
 };
 
 export default function TermsPage() {

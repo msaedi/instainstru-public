@@ -3,8 +3,14 @@ import { LegalLayout } from "@/components/layout/LegalLayout";
 import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "SMS Terms & Consent",
-  robots: { index: false, follow: false },
+  title: "SMS Terms",
+  description: "iNSTAiNSTRU SMS messaging terms and conditions.",
+  alternates: {
+    canonical: "https://instainstru.com/sms-terms",
+  },
+  robots: {
+    index: false,
+  },
 };
 
 export default function SmsTermsPage() {

@@ -4,7 +4,10 @@ import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  robots: { index: false, follow: false },
+  description: "iNSTAiNSTRU privacy policy - how we collect, use, and protect your data.",
+  alternates: {
+    canonical: "https://instainstru.com/privacy",
+  },
 };
 
 export default function PrivacyPage() {
