@@ -107,7 +107,7 @@ export default function RootLayout({
               description:
                 "Book vetted instructors for music, tutoring, fitness, languages & more in NYC. Instant booking, no approval needed.",
               url: "https://instainstru.com",
-              logo: "https://assets.instainstru.com/brand/logo.png",
+              logo: "https://assets.instainstru.com/brand/logo.webp",
               foundingDate: "2025",
               address: {
                 "@type": "PostalAddress",
@@ -150,6 +150,7 @@ export default function RootLayout({
               description:
                 "NYC marketplace for booking vetted instructors for music, tutoring, fitness, languages and more.",
               url: "https://instainstru.com",
+              logo: "https://assets.instainstru.com/brand/logo.webp",
               telephone: "",
               email: "support@instainstru.com",
               address: {
