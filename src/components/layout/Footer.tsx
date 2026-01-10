@@ -10,19 +10,13 @@ export function Footer() {
             href={LINKS.internal.privacy}
             className="transition-colors hover:text-brand-purple dark:hover:text-brand-lavender"
           >
-            Privacy
+            Privacy Policy
           </Link>
           <Link
             href={LINKS.internal.terms}
             className="transition-colors hover:text-brand-purple dark:hover:text-brand-lavender"
           >
-            Terms
-          </Link>
-          <Link
-            href={LINKS.internal.smsTerms}
-            className="transition-colors hover:text-brand-purple dark:hover:text-brand-lavender"
-          >
-            SMS Terms
+            Terms of Service
           </Link>
           <a
             href="mailto:support@instainstru.com"

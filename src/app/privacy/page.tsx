@@ -4,7 +4,7 @@ import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "iNSTAiNSTRU privacy policy - how we collect, use, and protect your data.",
+  description: "iNSTAiNSTRU privacy policy for our waitlist.",
   alternates: {
     canonical: "https://instainstru.com/privacy",
   },
@@ -15,101 +15,55 @@ export default function PrivacyPage() {
     <LegalLayout title="Privacy Policy">
       <div className="glass-card p-6">
         <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
-          <em>Last updated: {new Date().toISOString().slice(0, 10)}</em>
+          <em>Last updated: January 2026</em>
         </p>
         <p className="text-gray-600 dark:text-gray-300">
           iNSTAiNSTRU LLC (&quot;iNSTAiNSTRU&quot;, &quot;we&quot;, &quot;us&quot;) operates a
-          marketplace connecting students and independent instructors for in-person and
-          online lessons.
+          marketplace connecting students with independent instructors for in-person lessons
+          in NYC.
         </p>
       </div>
 
       <div className="glass-card p-6">
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
-          Information We Collect
+          What We Collect
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          <li>Account &amp; contact details (name, email, phone).</li>
-          <li>Booking details, messages with instructors, support interactions.</li>
-          <li>
-            Payment data handled by our processor (e.g., Stripe); we do not store full
-            card numbers.
-          </li>
-          <li>Device/usage data (cookies, IP address, analytics).</li>
-        </ul>
-      </div>
-
-      <div className="glass-card p-6">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
-          How We Use Information
-        </h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          <li>Operate and improve the service; process bookings and payments.</li>
-          <li>
-            Send transactional communications (confirmations, reminders, receipts, security
-            alerts).
-          </li>
-          <li>
-            With consent, send optional marketing updates. You can opt out at any time.
-          </li>
-        </ul>
-      </div>
-
-      <div className="glass-card p-6">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
-          SMS &amp; Texting
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300">
-          By opting in on a web form, you agree to receive messages related to your account
-          and bookings. Message frequency varies. Msg &amp; data rates may apply. Reply{" "}
-          <strong>STOP</strong> to opt out or <strong>HELP</strong> for help. See our{" "}
-          <a
-            href="/sms-terms"
-            className="text-brand-purple hover:underline dark:text-brand-lavender"
-            target="_blank"
-            rel="noopener"
-          >
-            SMS Terms
-          </a>
-          .
+        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          When you join our waitlist, we collect your email address. We may also collect
+          basic analytics data (such as page views) to improve our website.
         </p>
       </div>
 
       <div className="glass-card p-6">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Sharing</h2>
-        <p className="text-gray-600 dark:text-gray-300">
-          We share data with service providers (hosting, communications, analytics, payments)
-          under contracts that protect your data. We do not sell personal data.
+        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+          How We Use It
+        </h2>
+        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          We&apos;ll use your email to notify you when InstaInstru launches in NYC. We may
+          also send occasional updates about our progress. You can unsubscribe at any time.
         </p>
       </div>
 
       <div className="glass-card p-6">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Your Choices</h2>
+        <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
+          What We Don&apos;t Do
+        </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          To access, update, or delete your data, contact{" "}
-          <a
-            href={BRAND.urls.privacy}
-            className="text-brand-purple hover:underline dark:text-brand-lavender"
-          >
-            privacy@instainstru.com
-          </a>
-          .
+          We don&apos;t sell, rent, or share your email address with third parties for
+          marketing purposes.
         </p>
       </div>
 
       <div className="glass-card p-6">
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Contact</h2>
         <p className="text-gray-600 dark:text-gray-300">
-          iNSTAiNSTRU LLC · New York, NY ·{" "}
+          Questions? Reach us at{" "}
           <a
             href={BRAND.urls.privacy}
             className="text-brand-purple hover:underline dark:text-brand-lavender"
           >
             privacy@instainstru.com
           </a>
-        </p>
-        <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-          This template is provided for general information only and is not legal advice.
         </p>
       </div>
     </LegalLayout>
