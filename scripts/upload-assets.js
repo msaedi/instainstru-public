@@ -51,8 +51,13 @@ function hasCwebp() {
 // Convert image to WebP
 function convertToWebp(inputPath) {
   const outputPath = inputPath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  const ext = path.extname(inputPath).toLowerCase();
+  const isPng = ext === '.png';
   try {
-    execSync(`cwebp -q 85 "${inputPath}" -o "${outputPath}"`, { stdio: 'inherit' });
+    const command = isPng
+      ? `cwebp -lossless -alpha_q 100 -exact "${inputPath}" -o "${outputPath}"`
+      : `cwebp -q 85 "${inputPath}" -o "${outputPath}"`;
+    execSync(command, { stdio: 'inherit' });
     console.log(`  [OK] Converted to WebP: ${path.basename(outputPath)}`);
     return outputPath;
   } catch (error) {
