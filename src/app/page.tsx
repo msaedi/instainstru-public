@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { BRAND } from '@/lib/constants';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { ColorSchemeImage } from '@/components/ui/ColorSchemeImage';
 import { StudentWaitlistForm } from '@/components/forms/StudentWaitlistForm';
 
 const VIDEO_URL = 'https://assets.instainstru.com/animations/landing-page.mp4';
@@ -27,8 +27,9 @@ function HeroCurrentLayout() {
   return (
     <section className="bg-gradient-hero px-4 pt-0 pb-12 sm:pb-16 overflow-x-hidden">
       <div className="mx-auto max-w-4xl text-center">
-        <Image
-          src="https://assets.instainstru.com/landing/illustrations/nyc-skyline.webp"
+        <ColorSchemeImage
+          lightSrc="https://assets.instainstru.com/landing/illustrations/nyc-skyline.webp"
+          darkSrc="https://assets.instainstru.com/landing/illustrations/nyc-skyline-white.webp"
           alt="NYC skyline"
           width={2499}
           height={781}
