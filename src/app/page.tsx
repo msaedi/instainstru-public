@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BRAND } from '@/lib/constants';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -24,8 +25,16 @@ export default function HomePage() {
 
 function HeroCurrentLayout() {
   return (
-    <section className="bg-gradient-hero px-4 py-16 sm:py-24 overflow-x-hidden">
+    <section className="bg-gradient-hero px-4 pt-0 pb-12 sm:pb-16 overflow-x-hidden">
       <div className="mx-auto max-w-4xl text-center">
+        <Image
+          src="https://assets.instainstru.com/landing/illustrations/nyc-skyline.webp"
+          alt="NYC skyline"
+          width={2499}
+          height={781}
+          className="mx-auto -mt-4 mb-1 block w-full max-w-5xl sm:-mt-6"
+          priority
+        />
         <HeroHeadline />
         <HeroDescription />
 
@@ -113,11 +122,10 @@ function HeroCTAs({ align = "center" }: { align?: "center" | "left" }) {
             >
               <span>For Instructors:</span>
             </div>
-            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 ${innerAlign}`}>
+            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 lg:min-h-[3.75rem] ${innerAlign}`}>
               Founding instructors lock in <span className="font-semibold">8%</span> platform fees
               for life. Spots are limited.
             </p>
-            <div className="h-4" aria-hidden="true" />
 
             <div className="mt-4 flex w-full flex-col gap-4 items-stretch">
               <Link
@@ -141,7 +149,7 @@ function HeroCTAs({ align = "center" }: { align?: "center" | "left" }) {
             >
               <span>For Students:</span>
             </div>
-            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 ${innerAlign}`}>
+            <p className={`mt-2 text-sm text-gray-600 dark:text-gray-400 lg:min-h-[3.75rem] ${innerAlign}`}>
               We&apos;re onboarding our instructors now so you can book the best from day one.
               Drop your email and we&apos;ll ping you once we&apos;re live.
             </p>

@@ -73,7 +73,7 @@ export function StudentWaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form onSubmit={handleSubmit} className="grid w-full gap-4">
       <input
         type="email"
         value={email}
@@ -87,11 +87,7 @@ export function StudentWaitlistForm() {
         placeholder="Enter email"
         required
         disabled={state === 'loading'}
-        className="w-full px-6 py-3 rounded-full bg-white/70 dark:bg-gray-800/70 
-                   backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50
-                   text-gray-700 dark:text-white placeholder-gray-400
-                   focus:outline-none focus:ring-2 focus:ring-purple-400/50
-                   disabled:opacity-50 disabled:cursor-not-allowed"
+        className="glass-input h-12 sm:h-14"
       />
 
       {state === 'error' && errorMessage && (
