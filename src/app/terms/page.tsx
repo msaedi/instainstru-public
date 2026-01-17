@@ -27,21 +27,25 @@ export default function TermsPage() {
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
           Current Status
         </h2>
-        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          We&apos;re currently onboarding founding instructors and building our waitlist.
-          Full terms of service for bookings, payments, and lessons will apply when the
-          platform launches publicly.
-        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          <li>
+            We&apos;re currently onboarding founding instructors and building our waitlist.
+            Full terms of service for bookings, payments, and lessons will apply when the
+            platform launches publicly.
+          </li>
+        </ul>
       </div>
 
       <div className="glass-card p-6">
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
           Waitlist
         </h2>
-        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          By joining our waitlist, you agree to receive email updates about InstaInstru&apos;s
-          launch. You can unsubscribe at any time.
-        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          <li>
+            By joining our waitlist, you agree to receive email updates about InstaInstru&apos;s
+            launch. You can unsubscribe at any time.
+          </li>
+        </ul>
       </div>
 
       <div className="glass-card p-6">

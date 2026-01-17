@@ -74,8 +74,14 @@ export function StudentWaitlistForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid w-full gap-4">
+      <label htmlFor="waitlist-email" className="sr-only">
+        Email address
+      </label>
       <input
+        id="waitlist-email"
+        name="email"
         type="email"
+        autoComplete="email"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -87,11 +93,20 @@ export function StudentWaitlistForm() {
         placeholder="Enter email"
         required
         disabled={state === 'loading'}
+        aria-invalid={state === 'error' ? 'true' : undefined}
+        aria-describedby={state === 'error' && errorMessage ? 'waitlist-error' : undefined}
         className="glass-input h-12 sm:h-14"
       />
 
       {state === 'error' && errorMessage && (
-        <p className="text-red-500 text-sm text-center">{errorMessage}</p>
+        <p
+          id="waitlist-error"
+          role="alert"
+          aria-live="assertive"
+          className="text-red-500 dark:text-red-400 text-sm text-center"
+        >
+          {errorMessage}
+        </p>
       )}
 
       <button

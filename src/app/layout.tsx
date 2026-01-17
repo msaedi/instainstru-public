@@ -192,6 +192,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-surface text-surface-foreground antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#7E22CE] dark:focus:ring-[#C084FC] focus:ring-offset-2 focus:bg-white focus:text-gray-900 dark:focus:bg-gray-800 dark:focus:text-white dark:focus:ring-offset-gray-900"
+        >
+          Skip to main content
+        </a>
         {children}
         <Analytics />
       </body>

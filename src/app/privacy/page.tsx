@@ -28,20 +28,24 @@ export default function PrivacyPage() {
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
           What We Collect
         </h2>
-        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          When you join our waitlist, we collect your email address. We may also collect
-          basic analytics data (such as page views) to improve our website.
-        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          <li>
+            When you join our waitlist, we collect your email address. We may also collect
+            basic analytics data (such as page views) to improve our website.
+          </li>
+        </ul>
       </div>
 
       <div className="glass-card p-6">
         <h2 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">
           How We Use It
         </h2>
-        <p className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-          We&apos;ll use your email to notify you when InstaInstru launches in NYC. We may
-          also send occasional updates about our progress. You can unsubscribe at any time.
-        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+          <li>
+            We&apos;ll use your email to notify you when InstaInstru launches in NYC. We may
+            also send occasional updates about our progress. You can unsubscribe at any time.
+          </li>
+        </ul>
       </div>
 
       <div className="glass-card p-6">

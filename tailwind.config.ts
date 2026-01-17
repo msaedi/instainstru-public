@@ -23,6 +23,10 @@ const config: Config = {
           card: "rgb(var(--card))",
         },
       },
+      ringColor: {
+        "brand-purple": "#7E22CE",
+        "brand-lavender": "#C084FC",
+      },
       fontFamily: {
         sans: [
           "system-ui",

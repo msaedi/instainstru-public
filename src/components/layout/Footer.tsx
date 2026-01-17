@@ -18,6 +18,12 @@ export function Footer() {
           >
             Terms of Service
           </Link>
+          <Link
+            href="/accessibility"
+            className="transition-colors hover:text-brand-purple dark:hover:text-brand-lavender"
+          >
+            Accessibility
+          </Link>
           <a
             href="mailto:support@instainstru.com"
             className="transition-colors hover:text-brand-purple dark:hover:text-brand-lavender"
@@ -25,7 +31,7 @@ export function Footer() {
             Contact
           </a>
         </div>
-        <p className="text-gray-500 dark:text-gray-500">
+        <p className="text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} iNSTAiNSTRU LLC · New York, NY
         </p>
       </div>

@@ -14,7 +14,7 @@ export function LegalLayout({ title, children }: LegalLayoutProps) {
     <div className="flex min-h-screen flex-col bg-white dark:bg-gray-900">
       <Header />
 
-      <main className="flex-1 bg-gradient-hero">
+      <main id="main-content" className="flex-1 bg-gradient-hero">
         <div className="mx-auto max-w-4xl px-4 py-8">
           <Link
             href={LINKS.internal.home}

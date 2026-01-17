@@ -112,7 +112,11 @@ body {
 }
 
 .glass-input {
-  @apply w-full rounded-full border border-gray-200/50 bg-white/70 px-4 py-3 text-base text-gray-700 placeholder:text-gray-400 backdrop-blur-md shadow-lg shadow-black/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-white sm:px-5 sm:text-lg;
+  @apply w-full rounded-full border border-gray-200/50 bg-white/70 px-4 py-3 text-base text-gray-700 placeholder:text-gray-400 backdrop-blur-md shadow-lg shadow-black/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white sm:px-5 sm:text-lg;
+}
+
+.glass-input:focus {
+  --tw-ring-color: #7e22ce;
 }
 
 .brand-wordmark {
@@ -125,6 +129,10 @@ body {
   }
 
   .glass-input {
-    @apply border-gray-700/50 bg-gray-800/70 text-white placeholder:text-gray-400 shadow-black/20 focus:ring-purple-400 focus:ring-offset-gray-900;
+    @apply border-gray-700/50 bg-gray-800/70 text-white placeholder:text-gray-400 shadow-black/20;
+  }
+
+  .glass-input:focus {
+    --tw-ring-color: #c084fc;
   }
 }
