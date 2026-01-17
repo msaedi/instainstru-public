@@ -3,11 +3,8 @@ import { BRAND } from '@/lib/constants';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ColorSchemeImage } from '@/components/ui/ColorSchemeImage';
+import { HeroVideo } from '@/components/ui/HeroVideo';
 import { StudentWaitlistForm } from '@/components/forms/StudentWaitlistForm';
-
-const VIDEO_URL = 'https://assets.instainstru.com/animations/landing-page.mp4';
-const HERO_POSTER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='0.85'/%3E%3Cstop offset='100%25' stop-color='%23e9d5ff' stop-opacity='0.85'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3C/svg%3E";
 
 export default function HomePage() {
   return (
@@ -66,32 +63,6 @@ function HeroDescription() {
     <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-900 dark:text-gray-200 sm:text-xl">
       Background-checked instructors, tutors, and coaches — bookable instantly, at your home
     </p>
-  );
-}
-
-function HeroVideo({
-  className = "",
-  maxWidthClass = "max-w-2xl",
-}: {
-  className?: string;
-  maxWidthClass?: string;
-}) {
-  return (
-    <div className={`mx-auto w-full ${maxWidthClass} ${className}`}>
-      <div className="w-full overflow-hidden rounded-2xl bg-white/50 shadow-2xl shadow-purple-500/20 dark:shadow-purple-500/10">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster={HERO_POSTER}
-          className="block w-full"
-        >
-          <source src={VIDEO_URL} type="video/mp4" />
-        </video>
-      </div>
-    </div>
   );
 }
 
